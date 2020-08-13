@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal">Iliya's Weather App</h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="#">Main</a>
+            <a class="p-2 text-dark" href="#">Information</a>
+            <a class="p-2 text-dark" href="#">Documentation</a>
+        </nav>
+        <a class="btn btn-outline-primary" href="#">Sign up</a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4 offset-1">
+                <h2>Weather in Your Town</h2>
+                <form action="">
+                    <label for="city">Your City:</label>
+                    <input type="text" id="city" class="form-control" name="city" 
+                    placeholder="Input Your City">
+                    <input type="submit" name="send" value="acknowledge" class="mt-2 btn btn-danger">
+                </form>
+            </div>
+            <div class="col-4 offset-1">
+                <h2>Information</h2>
+                <div class="alert alert-danger">
+                    Weather in Seoul
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
