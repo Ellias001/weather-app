@@ -20,10 +20,10 @@
         <div class="row">
             <div class="col-4 offset-1">
                 <h2>Weather in Your Town</h2>
-                <form action="">
+                <form action="" method="post">
+                    {% csrf_token %}
                     <label for="city">Your City:</label>
-                    <input type="text" id="city" class="form-control" name="city" 
-                    placeholder="Input Your City">
+                    {{ form.name }}
                     <input type="submit" name="send" value="Search" class="mt-2 btn btn-danger">
                 </form>
             </div>
