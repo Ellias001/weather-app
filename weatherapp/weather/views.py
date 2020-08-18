@@ -9,6 +9,7 @@ URL = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid='
 def index(request):
     cities = City.objects.all()
     all_cities = list()
+    city_info = dict(); city_info['id'] = 0
 
     if request.method == 'POST':
         form = CityForm(request.POST)
@@ -18,12 +19,15 @@ def index(request):
 
     for city in cities:
         responce = requests.get(URL.format(city.name)).json()
-        city_info = {
-            'city': city.name,
-            'id': city.id,
-            'temp': responce["main"]["temp"],
-            'icon': responce["weather"][0]["icon"]
-        }
+        try:
+            city_info = {
+                'city': city.name,
+                'id': city.id,
+                'temp': responce["main"]["temp"],
+                'icon': responce["weather"][0]["icon"]
+            }
+        except Exception as _:
+            pass
         all_cities.append(city_info) 
 
     return render(request, 'weather/index.html', {'all_info': all_cities, 'form': form})
